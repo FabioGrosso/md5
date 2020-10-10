@@ -1,6 +1,7 @@
 
 #include "md5.h"
 #include <iostream>
+#include <cstring>
 
 int main(int argc, char *argv[])
 {
