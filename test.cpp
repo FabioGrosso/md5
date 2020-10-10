@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
     unsigned char decrypt[16];
     MD5Update(&md5,encrypt,strlen((char *)encrypt));
     MD5Final(&md5,decrypt);
-    printf("Before encryption: %s\n after encryption (16-bit) : ",encrypt);
+    printf("Before encryption: %s\n after encryption (16-word) : ",encrypt);
     for(i=4;i<12;i++)
     {
         printf("%02x",decrypt[i]);
     }
 
-    printf("\nBefore encryption: %s\n after encryption (32-bit) : ",encrypt);
+    printf("\nBefore encryption: %s\n after encryption (32-word) : ",encrypt);
     for(i=0;i<16;i++)
     {
         printf("%02x",decrypt[i]);
