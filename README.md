@@ -1,6 +1,6 @@
 # md5
 
-need CMAKE
+need cmake/3.17.0
 
 cmake ../md5
 
