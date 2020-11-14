@@ -2,6 +2,7 @@
 #include "md5.h"
 #include <iostream>
 #include <cstring>
+#include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
 using namespace std;
