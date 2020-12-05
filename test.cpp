@@ -19,16 +19,19 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < 8; ++i)
         str += alphanum[rand() % (sizeof(alphanum) - 1)];
-    cout << "salt :";
-    cout << str << endl;
 
-    char pass[20] = "qweasd";
+
+    char pass[40];
+    cin >> pass;
     string password = pass;
+
     cout << "passwd :";
     printf("%s\n",pass);
+    cout << "salt :";
+    cout << str << endl;
     password.append(str);
 
-    char encrypt[30];
+    char encrypt[40];
     int j;
     for(j=0; j<password.length(); ++j)
     {
