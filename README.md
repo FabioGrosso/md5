@@ -7,3 +7,5 @@ cmake ../md5
 make
 
 ./md5
+
+then input passwd to get the hash
