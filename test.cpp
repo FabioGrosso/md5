@@ -21,8 +21,7 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < 8; ++i)
         str += alphanum[rand() % (sizeof(alphanum) - 1)];
-
-
+    
     char pass[40];
     cin >> pass;
     string password = pass;
@@ -44,12 +43,12 @@ int main(int argc, char *argv[])
     printf("%s\n",encrypt);
 
     MD5_CTX md5;
-    MD5Init(&md5);
+    Init(&md5);
     int i;
     unsigned char decrypt[16];
 
-    MD5Update(&md5, reinterpret_cast<unsigned char *>(pass), strlen((char *)pass));
-    MD5Final(&md5,decrypt);
+    Update(&md5, reinterpret_cast<unsigned char *>(pass), strlen((char *)pass));
+    Final(&md5,decrypt);
     printf("Before encryption: %s\n after encryption (16-word) : ",pass);
     for(i=4;i<12;i++)
     {
@@ -62,9 +61,9 @@ int main(int argc, char *argv[])
         printf("%02x",decrypt[i]);
     }
 
-    MD5Init(&md5);
-    MD5Update(&md5, reinterpret_cast<unsigned char *>(encrypt), strlen((char *)encrypt));
-    MD5Final(&md5,decrypt);
+    Init(&md5);
+    Update(&md5, reinterpret_cast<unsigned char *>(encrypt), strlen((char *)encrypt));
+    Final(&md5,decrypt);
     printf("\nBefore encryption (salted): %s\n after encryption (16-word) : ",encrypt);
     for(i=4;i<12;i++)
     {
